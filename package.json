@@ -1,0 +1,114 @@
+{
+  "name": "@bluebase/plugin-skeleton",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [],
+  "main": "dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "BlueEast Team <code@blueeast.com>",
+  "release": {
+    "branch": "master",
+    "dryRun": false,
+    "debug": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlueBaseJS/plugin-skeleton"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "storybook:start": "bluebase storybook:start",
+    "demo": "build-storybook -c .storybook -o .out",
+    "test:watch": "jest --watch",
+    "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
+    "generate-docs": "typedoc --out dist/docs --target es6 --theme minimal --mode file src",
+    "deploy-docs": "ts-node tools/gh-pages-publish",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls && codecov",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+    "precommit": "lint-staged",
+    "storybook": "start-storybook -p 6006",
+    "storybook-native": "storybook start -p 7007",
+    "prestorybook-native": "rnstl",
+    "build-storybook": "build-storybook",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "prettier --write --use-tabs --single-quote",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
+    "validate-commit-msg": {
+      "types": "conventional-commit-types",
+      "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
+    },
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./src"
+      ],
+      "pattern": "**/*.stories.tsx",
+      "outputFile": "./storybook/storyLoader.js"
+    }
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    },
+    "collectCoverage": true,
+    "mapCoverage": true
+  },
+  "size-limit": [
+    {
+      "limit": "1 KB",
+      "webpack": false,
+      "path": "dist/*.js"
+    }
+  ],
+  "devDependencies": {
+    "semantic-release": "^15.13.2",
+    "@types/expo":"^32.0.5"
+  },
+  "dependencies": {
+    "react-native-svg-animated-linear-gradient":"^0.1.9",
+    "react-loading-skeleton": "^1.0.0",
+    "expo":"^32.0.6",
+
+    "deepmerge": "^3.2.0",
+    "react": "^16"
+  }
+}
