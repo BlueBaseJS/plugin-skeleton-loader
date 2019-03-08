@@ -1,4 +1,46 @@
 {
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "src",
+        "bluebase/storybook-native",
+        "./src"
+      ],
+      "pattern": "**/*.stories.tsx",
+      "outputFile": "./storybook/storyLoader.js"
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
+    "validate-commit-msg": {
+      "types": "conventional-commit-types",
+      "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
+    }
+  },
+  "scripts": {
+    "storybook-native:start": "bluebase storybook-native:start",
+    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "storybook:start": "bluebase storybook:start",
+    "demo": "build-storybook -c .storybook -o .out",
+    "test:watch": "jest --watch",
+    "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
+    "generate-docs": "typedoc --out dist/docs --target es6 --theme minimal --mode file src",
+    "deploy-docs": "ts-node tools/gh-pages-publish",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls && codecov",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+    "precommit": "lint-staged",
+    "storybook": "start-storybook -p 6006",
+    "storybook-native": "storybook start -p 7007",
+    "prestorybook-native": "rnstl",
+    "build-storybook": "build-storybook",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios"
+  },
   "name": "@bluebase/plugin-skeleton",
   "version": "0.1.0",
   "description": "",
@@ -22,50 +64,11 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  "scripts": {
-    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "build": "tsc",
-    "watch": "tsc -w",
-    "test": "jest",
-    "storybook:start": "bluebase storybook:start",
-    "demo": "build-storybook -c .storybook -o .out",
-    "test:watch": "jest --watch",
-    "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
-    "generate-docs": "typedoc --out dist/docs --target es6 --theme minimal --mode file src",
-    "deploy-docs": "ts-node tools/gh-pages-publish",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls && codecov",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release",
-    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
-    "precommit": "lint-staged",
-    "storybook": "start-storybook -p 6006",
-    "storybook-native": "storybook start -p 7007",
-    "prestorybook-native": "rnstl",
-    "build-storybook": "build-storybook",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios"
-  },
   "lint-staged": {
     "{src,test}/**/*.ts": [
       "prettier --write --use-tabs --single-quote",
       "git add"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    },
-    "validate-commit-msg": {
-      "types": "conventional-commit-types",
-      "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
-    },
-    "react-native-storybook-loader": {
-      "searchDir": [
-        "./src"
-      ],
-      "pattern": "**/*.stories.tsx",
-      "outputFile": "./storybook/storyLoader.js"
-    }
   },
   "jest": {
     "transform": {
@@ -100,15 +103,30 @@
     }
   ],
   "devDependencies": {
+    "@bluebase/cli-essentials": "^0.0.2",
+    "@bluebase/core": "^4.0.0-aplha.10",
+    "@bluebase/storybook-addon": "^3.0.0",
+    "@blueeast/tslint-config-blueeast": "^0.7.0",
+    "@storybook/addon-actions": "^5.0.0",
+    "@storybook/addon-links": "^5.0.0",
+    "@storybook/react": "^5.0.0",
+    "@storybook/react-native": "^4.1.13",
+    "@types/deepmerge": "^2.2.0",
+    "@types/expo": "^32.0.5",
+    "@types/react": "^16.8.7",
+    "babel-loader": "^8.0.4",
+    "react-native-storybook-loader": "^1.8.0",
+    "react-native-typescript-transformer": "^1.2.10",
     "semantic-release": "^15.13.2",
-    "@types/expo":"^32.0.5"
+    "typescript": "^3"
   },
   "dependencies": {
-    "react-native-svg-animated-linear-gradient":"^0.1.9",
-    "react-loading-skeleton": "^1.0.0",
-    "expo":"^32.0.6",
-
     "deepmerge": "^3.2.0",
-    "react": "^16"
+    "expo": "^32.0.6",
+    "react": "^16",
+    "react-content-loader": "^4.2.1",
+    "react-loading-skeleton": "^1.0.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.1.tar.gz",
+    "react-native-svg-animated-linear-gradient": "^0.1.9"
   }
 }

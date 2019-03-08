@@ -5,41 +5,41 @@ import { Svg } from 'expo';
 
 export interface skeletonProps {
 	type?: 'Circle' | 'Rect',
-	height?: number,
+	x?: number,
+	y?: number,
+	rx?: number,
+	ry?: number,
 	width?: number,
-	RectHorizontaly?: number,
-	RectVerticaly?: number,
-	RectHorizontalRadius?: number,
-	RectVerticalRadius?: number,
-	CircleHorizontaly?: number,
-	CircleVerticaly?: number,
-	CircleRadius?: number,
+	height?: number,
+	cx?: number,
+	cy?: number,
+	r?: number,
 }
 
 export const Skeletons = (props: skeletonProps) => {
-	const { type } = props;
+	const { type, x, y, rx, ry, width, height, cx, cy, r } = props;
 	return (
 		<SvgAnimatedLinearGradient
-			height={props.height ? props.height + 10 : ''}
+			height={height ? height + 10 : ''}
 		>
 			{
 				type === 'Circle'
 					?
 					<Svg.Circle
-						cx={`${props.CircleHorizontaly}`}
-						cy={`${props.CircleVerticaly}`}
-						r={`${props.CircleRadius}`}
-					//	width={`${props.width}`}
-					//	height={`${props.height}`}
+						cx={`${cx}`}
+						cy={`${cy}`}
+						r={`${r}`}
+					//		width={`${props.width}`}
+					//		height={`${props.height}`}
 					/>
 					:
 					<Svg.Rect
-						x={`${props.RectHorizontaly ? props.RectHorizontaly : ''}`}
-						y={`${props.RectVerticaly ? props.RectVerticaly : ''}`}
-						rx={`${props.RectHorizontalRadius ? props.RectHorizontalRadius : ''}`}
-						ry={`${props.RectVerticalRadius ? props.RectVerticalRadius : ''}`}
-						width={`${props.width ? props.width : ''}`}
-						height={`${props.height ? props.height : ''}`}
+						x={`${x ? x : ''}`}
+						y={`${y ? y : ''}`}
+						rx={`${x ? rx : ''}`}
+						ry={`${ry ? ry : ''}`}
+						width={`${width ? width : ''}`}
+						height={`${height ? height : ''}`}
 					/>
 			}
 		</SvgAnimatedLinearGradient>

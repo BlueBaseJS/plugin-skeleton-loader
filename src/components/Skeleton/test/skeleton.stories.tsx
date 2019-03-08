@@ -3,15 +3,15 @@ import { storiesOf } from '@storybook/react';
 
 import { getComponent } from '@bluebase/core';
 
-const Skeleton = getComponent('skeleton');
+const Skeleton = getComponent('Skeleton');
 
 storiesOf('skeleton', module)
 
 	.add('rectangle skeleton ', () => {
 		return (
 			<Skeleton
-				RectHorizontaly={7}
-				RectVerticaly={7}
+				rx={7}
+				ry={7}
 				type="Rect"
 				height={90}
 				width={200}
@@ -23,13 +23,11 @@ storiesOf('skeleton', module)
 	.add('circle skeleton ', () => {
 		return (
 			<Skeleton
-				CircleVerticaly={3}
-				CircleHorizontaly={3}
+				cx={30}
+				cy={30}
+				r={30}
 				type="Circle"
-				circle={true}
-				CircleRadius={3}
-				height={20}
-				width={40}
+
 
 			/>
 		);
