@@ -6,7 +6,7 @@ export default createPlugin({
 	name: 'react-skeleton',
 
 	components: {
-		//	Skeleton: Skeletons,
+		Skeleton: Skeletons,
 		HomeScreen: () => <Skeletons cx={30} cy={30} r={30} type="Circle" />,
 	},
 });

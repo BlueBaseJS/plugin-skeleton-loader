@@ -1,21 +1,23 @@
 import { BootOptions } from '@bluebase/core';
 import commonBootOptions from '../common/bluebase';
 import deepmerge from 'deepmerge';
-
+// import Plugin from '../../src';
+// import {Router} from '@bluebase/plugin-react-router';
 // TODO: Only for evaluation, remove this
 import DummyPlugin from './sample';
-import skeletonPlugin from "../../src/index"
+
 /**
- * Add your platform specific configs here.
- * We keep all the universal (cross platform) configs in
+ * Add your platform specific configs here. 
+ * We keep all the universal (cross platform) configs in 
  * the common folder, and extend them here.
  */
 const bootOptions: Partial<BootOptions> = {
 
 	plugins: [
 		// TODO: Only for evaluation, remove this
-		DummyPlugin,
-		skeletonPlugin
+		DummyPlugin
+		// Plugin,
+		// Router
 	],
 	// config: {
 
