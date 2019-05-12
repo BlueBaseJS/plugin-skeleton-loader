@@ -1,12 +1,18 @@
 import { BlueBase } from '@bluebase/core';
 import Plugin from '../index';
 import { Skeletons } from '../components/Skeleton';
+import React from 'react';
+
+import { configure ,mount} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
 test('Plugin should be correctly registered', async () => {
 	const BB = new BlueBase();
 	await BB.Plugins.register(Plugin);
-	expect(BB.Plugins.has('skeleton-loader')).toBeTruthy();
+	expect(BB.Plugins.has('react-skeleton')).toBeTruthy();
 });
-test('Plugin should be correctly mounted', async () => {
+test('Plugin should be correctly mounted', () => {
 	const props = {
 		type: 'Circle',
 		x: 12,
@@ -19,6 +25,6 @@ test('Plugin should be correctly mounted', async () => {
 		r: 12,
 	};
 	const params = props as any;
-	const res = Skeletons(params);
+	const res = mount(<Skeletons   {...params}/>);
 	expect(res).toEqual(12);
 });
