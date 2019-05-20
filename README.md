@@ -3,7 +3,7 @@
   <h1>
 		plugin-skeleton-loader
 	</h1>
-  <p>A BlueBase plugin boilerplate!</p>
+  <p>A BlueBase plugin which provide loading animation for circle and rectangle!</p>
 </div>
 
 <hr />
@@ -22,8 +22,40 @@
 ## 🤝 Compatibility
 
 | 🌏 Web | 🖥 Electron | 📱 React Native |
-| :---: | :--------: | :------------: |
-|✅|✅|❌|
+| :----: | :---------: | :-------------: |
+|   ✅    |      ✅      |        ✅        |
+
+## Installation
+
+Install the plugin as a dependency in your project:
+
+```bash
+yarn add @bluebase/plugin-skeleton-loader
+```
+
+The easiest way to add a new plugin is pass it as a prop to the `BlueBaseApp` component.
+
+```ts
+import { BlueBaseApp } from '@bluebase/core';
+import Plugin from '@bluebase/plugin-skeleton-loader';
+
+export const App = () => (
+  <BlueBaseApp plugins={[Plugin]} />
+);
+```
+
+Typically, in a large project you would be using BlueBase CLI. In your BlueBase project created by the CLI, add the plugin in the `plugins` field in your `bluebase.ts` file:
+
+```ts
+export default {
+
+    // ...other bluebase.ts properties
+
+  plugins: [
+    import('@bluebase/plugin-skeleton-loader')
+  ]
+}
+```
 
 ## Docs
 

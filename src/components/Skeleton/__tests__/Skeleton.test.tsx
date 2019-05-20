@@ -1,14 +1,12 @@
+import { configure, mount } from 'enzyme';
+
 import Adapter from 'enzyme-adapter-react-16';
 import { BlueBaseApp } from '@bluebase/core';
 import Plugin from '../../../index';
 import React from 'react';
-import { configure } from 'enzyme';
-import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
-import console = require('console');
 
 configure({ adapter: new Adapter() });
-// const Skeletons = getComponent<skeletonProps>('Skeletons');
 describe('test cases for web', () => {
 	it('should skeleton in circle', async () => {
 		const { Skeletons } = require('../index.tsx');
@@ -19,8 +17,6 @@ describe('test cases for web', () => {
 		);
 		await waitForElement(wrapper, Skeletons);
 		expect(wrapper).toMatchSnapshot();
-		console.log('chkkkkkkkkkkkkk', wrapper.find('ContentLoader'));
-		// expect()
 		expect(wrapper.props().children.props.type).toBe('Circle');
 	});
 	it('should skeleton in rectangle', async () => {
@@ -31,7 +27,6 @@ describe('test cases for web', () => {
 			</BlueBaseApp>
 		);
 		await waitForElement(wrapper, Skeletons);
-		// wrapper.toMatc
 		expect(wrapper.props().children.props.type).toBe('Rect');
 	});
 	it('should skeleton in rectangle', async () => {
@@ -42,7 +37,6 @@ describe('test cases for web', () => {
 			</BlueBaseApp>
 		);
 		await waitForElement(wrapper, Skeletons);
-		// wrapper.toMatc
 		expect(wrapper.props().children.props.type).toBe('Rect');
 	});
 });
@@ -56,7 +50,6 @@ describe('test cases for android', () => {
 			</BlueBaseApp>
 		);
 		await waitForElement(wrapper, Skeletons);
-		// wrapper.toMatc
 		expect(wrapper.props().children.props.type).toBe('Circle');
 	});
 	it('should skeleton in rectangle', async () => {
@@ -67,7 +60,6 @@ describe('test cases for android', () => {
 			</BlueBaseApp>
 		);
 		await waitForElement(wrapper, Skeletons);
-		// wrapper.toMatc
 		expect(wrapper.props().children.props.type).toBe('Rect');
 	});
 	it('should skeleton in rectangle', async () => {
@@ -78,7 +70,6 @@ describe('test cases for android', () => {
 			</BlueBaseApp>
 		);
 		await waitForElement(wrapper, Skeletons);
-		// wrapper.toMatc
 		expect(wrapper.props().children.props.type).toBe('Rect');
 	});
 });
@@ -92,7 +83,6 @@ describe('test cases for Ios', () => {
 			</BlueBaseApp>
 		);
 		await waitForElement(wrapper, Skeletons);
-		// wrapper.toMatc
 		expect(wrapper.props().children.props.type).toBe('Circle');
 	});
 	it('should skeleton in rectangle', async () => {
@@ -103,7 +93,6 @@ describe('test cases for Ios', () => {
 			</BlueBaseApp>
 		);
 		await waitForElement(wrapper, Skeletons);
-		// wrapper.toMatc
 		expect(wrapper.props().children.props.type).toBe('Rect');
 	});
 	it('should skeleton in rectangle', async () => {
@@ -114,7 +103,6 @@ describe('test cases for Ios', () => {
 			</BlueBaseApp>
 		);
 		await waitForElement(wrapper, Skeletons);
-		// wrapper.toMatc
 		expect(wrapper.props().children.props.type).toBe('Rect');
 	});
 });

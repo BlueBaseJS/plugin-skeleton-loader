@@ -2,7 +2,7 @@ import React from 'react';
 import { Svg } from 'expo';
 import SvgAnimatedLinearGradient from 'react-native-svg-animated-linear-gradient';
 
-export interface skeletonProps {
+export interface SkeletonProps {
 	type?: 'Circle' | 'Rect';
 	x?: number;
 	y?: number;
@@ -14,7 +14,7 @@ export interface skeletonProps {
 	cy?: number;
 	r?: number;
 }
-export const Skeletons = (props: skeletonProps) => {
+export const Skeletons = (props: SkeletonProps) => {
 	const { type, x, y, rx, ry, width, height, cx, cy, r } = props;
 	return (
 		<SvgAnimatedLinearGradient height={height ? height + 10 : ''}>
@@ -23,19 +23,17 @@ export const Skeletons = (props: skeletonProps) => {
 					cx={`${cx}`}
 					cy={`${cy}`}
 					r={`${r}`}
-					//		width={`${props.width}`}
-					//		height={`${props.height}`}
 				/>
 			) : (
-				<Svg.Rect
-					x={`${x ? x : ''}`}
-					y={`${y ? y : ''}`}
-					rx={`${x ? rx : ''}`}
-					ry={`${ry ? ry : ''}`}
-					width={`${width ? width : ''}`}
-					height={`${height ? height : ''}`}
-				/>
-			)}
+					<Svg.Rect
+						x={`${x ? x : ''}`}
+						y={`${y ? y : ''}`}
+						rx={`${x ? rx : ''}`}
+						ry={`${ry ? ry : ''}`}
+						width={`${width ? width : ''}`}
+						height={`${height ? height : ''}`}
+					/>
+				)}
 		</SvgAnimatedLinearGradient>
 	);
 };

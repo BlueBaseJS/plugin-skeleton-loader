@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader';
 import React from 'react';
-export interface skeletonProps {
+export interface SkeletonProps {
 	type?: 'Circle' | 'Rect';
 	x?: number;
 	y?: number;
@@ -13,7 +13,7 @@ export interface skeletonProps {
 	r?: number;
 }
 
-export const Skeletons = (props: skeletonProps) => {
+export const Skeletons = (props: SkeletonProps) => {
 	const { type, x, y, rx, ry, width, height, cx, cy, r } = props;
 
 	return (
@@ -24,22 +24,20 @@ export const Skeletons = (props: skeletonProps) => {
 						cx={`${cx}`}
 						cy={`${cy}`}
 						r={`${r}`}
-						//		width={`${props.width}`}
-						//		height={`${props.height}`}
 					/>
 				</ContentLoader>
 			) : (
-				<ContentLoader>
-					<rect
-						x={`${x ? x : ''}`}
-						y={`${y ? y : ''}`}
-						rx={`${x ? rx : ''}`}
-						ry={`${ry ? ry : ''}`}
-						width={`${width ? width : ''}`}
-						height={`${height ? height : ''}`}
-					/>
-				</ContentLoader>
-			)}
+					<ContentLoader>
+						<rect
+							x={`${x ? x : ''}`}
+							y={`${y ? y : ''}`}
+							rx={`${x ? rx : ''}`}
+							ry={`${ry ? ry : ''}`}
+							width={`${width ? width : ''}`}
+							height={`${height ? height : ''}`}
+						/>
+					</ContentLoader>
+				)}
 		</>
 	);
 };
