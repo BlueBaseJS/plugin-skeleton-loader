@@ -1,5 +1,5 @@
-import React from 'react';
 import ContentLoader from 'react-content-loader';
+import React from 'react';
 export interface skeletonProps {
 	type?: 'Circle' | 'Rect';
 	x?: number;

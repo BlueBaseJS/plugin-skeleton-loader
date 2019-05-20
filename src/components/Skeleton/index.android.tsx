@@ -1,6 +1,7 @@
 import React from 'react';
-import SvgAnimatedLinearGradient from 'react-native-svg-animated-linear-gradient';
 import { Svg } from 'expo';
+import SvgAnimatedLinearGradient from 'react-native-svg-animated-linear-gradient';
+
 export interface skeletonProps {
 	type?: 'Circle' | 'Rect';
 	x?: number;
