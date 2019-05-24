@@ -1,6 +1,6 @@
 {
-  "name": "skeleton-loader",
-  "description": "A BlueBase plugin boilerplate!",
+  "name": "@bluebase/skeleton-loader",
+  "description": "A BlueBase that provides a SkeletonLoader component.",
   "author": "BlueEast Team <code@blueeast.com>",
   "version": "0.0.1",
   "main": "dist/index.js",

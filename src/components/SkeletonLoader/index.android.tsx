@@ -1,9 +1,8 @@
 import React from 'react';
+import { Svg } from 'expo';
 import SvgAnimatedLinearGradient from 'react-native-svg-animated-linear-gradient';
 
-import { Svg } from 'expo';
-
-export interface skeletonProps {
+export interface SkeletonLoaderProps {
 	type?: 'Circle' | 'Rect';
 	x?: number;
 	y?: number;
@@ -15,12 +14,19 @@ export interface skeletonProps {
 	cy?: number;
 	r?: number;
 }
-export const Skeletons = (props: skeletonProps) => {
+
+export const SkeletonLoader = (props: SkeletonLoaderProps) => {
 	const { type, x, y, rx, ry, width, height, cx, cy, r } = props;
 	return (
 		<SvgAnimatedLinearGradient height={height ? height + 10 : ''}>
 			{type === 'Circle' ? (
-				<Svg.Circle cx={`${cx}`} cy={`${cy}`} r={`${r}`} />
+				<Svg.Circle
+					cx={`${cx}`}
+					cy={`${cy}`}
+					r={`${r}`}
+					//		width={`${props.width}`}
+					//		height={`${props.height}`}
+				/>
 			) : (
 				<Svg.Rect
 					x={`${x ? x : ''}`}

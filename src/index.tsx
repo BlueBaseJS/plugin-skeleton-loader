@@ -1,12 +1,13 @@
-import { Skeletons } from './components/Skeleton';
+import { SkeletonLoader } from './components/SkeletonLoader';
 import { createPlugin } from '@bluebase/core';
-import React from 'react';
+
+export * from './components/exports';
+
 export default createPlugin({
-	key: 'ReactSkeletonPlugin',
-	name: 'react-skeleton',
+	key: 'skeleton-loader',
+	name: 'Skeleton Loader Plugin',
 
 	components: {
-		Skeleton: Skeletons,
-		HomeScreen: () => <Skeletons cx={30} cy={30} r={30} type="Circle" />,
+		SkeletonLoader,
 	},
 });
