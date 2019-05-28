@@ -1,76 +1,49 @@
-# Skeleton Loader
+<div align="center">
+	<img width=125 height=125 src="assets/common/logo.png">
+  <h1>
+		plugin-skeleton-loader
+	</h1>
+  <p>A BlueBase plugin!</p>
+</div>
 
 ## Description: 
 Skeleton Loader is a component which is used to display a splash screen to indicate that the screen is loading.
 
-## Usage/Code
+## Usage
 
 ```
-export const SkeletonLoader = (props: SkeletonLoaderProps) => {
-    const { type, x, y, rx, ry, width, height, cx, cy, r } = props;
-
-    return (
-        <>
-            {type === 'Circle' ? (
-                <ContentLoader>
-                    <circle
-                        cx={`${cx}`}
-                        cy={`${cy}`}
-                        r={`${r}`}
-                        //      width={`${props.width}`}
-                        //      height={`${props.height}`}
-                    />
-                </ContentLoader>
-            ) : (
-                <ContentLoader>
-                    <rect
-                        x={`${x ? x : ''}`}
-                        y={`${y ? y : ''}`}
-                        rx={`${x ? rx : ''}`}
-                        ry={`${ry ? ry : ''}`}
-                        width={`${width ? width : ''}`}
-                        height={`${height ? height : ''}`}
-                    />
-                </ContentLoader>
-            )}
-        </>
-    );
-};
+<Skeleton
+    rx={7}
+    ry={7}
+    type="Rect"
+    height={60}
+    width={50}
+/>
 ```
 
 ## ScreenShots
-| 🌏 Web | 🖥 Android | 📱 IOS |
-| :----: | :---------: | :-------------: |
-|<img src="./src/components/Skeleton/screenshot/Screenshotweb1.png" width="180"/> | | |
-
-## Component Style
-
-| Name | Type | Description |
-| :-------: | :---------: | :-----------------------------------: |
-| type | ️circle | These styles are applied on content |
-| type | Rect ️ | These styles are applied on status |
+|                                        🌏 Web                                        |                                      🖥 Android                                      |                                          📱 IOS                                          |
+| :----------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
+| <img src="./src/components/Skeleton/screenshot/SkeletonLoader_web.png" width="180"/> | <img src="./src/components/Skeleton/screenshot/SkeletonLoader_ios.png" width="180"/> | <img src="./src/components/Skeleton/screenshot/SkeletonLoader_android.png" width="180"/> |
 
 ## Component Props
 
-| Prop | Types | Default| Comments |
-| :---: | :-----:| :-----: | :--------------------------: |
-| type | number | | type of skeleton loader|
-| x | number | | |
-| y | number | | |
-| rx | number | | |
-| ry | number | | |
-| width | number | | |
-| height | number | | |
-| cx | number | | |
-| cy | number | | |
-| r | number | | |
+|  Prop  |      Types      | Default |              Comments              |
+| :----: | :-------------: | :-----: | :--------------------------------: |
+|   x    |     number      |         |          length of x-axis          |
+|   y    |     number      |         |          length of y-axis          |
+|   rx   |     number      |         |  Length of x-axis it type is Rect  |
+|   ry   |     number      |         |  Length of y-axis it type is Rect  |
+| width  |     number      |         |               Width                |
+| height |     number      |         |               Height               |
+|   cx   |     number      |         | Length of x-axis it type is Circle |
+|   cy   |     number      |         | Length of y-axis it type is Circle |
+|   r    |     number      |         |          Radius if Circle          |
+|  type  | ️Circle \| Rect |         |             Shape Type             |
 
 ## User Stories
 
-| Story | In Storybook | Has Unit Test |
-| :-------------------------------------------------------------: | :----------: | :-----------: |
-|it should render rectangle skeleton screen | ✅ | ✅ |
-|it should render circle skeleton screen | ✅ | ✅ | 
-
-
-
+|                   Story                    | In Storybook | Has Unit Test |
+| :----------------------------------------: | :----------: | :-----------: |
+| it should render rectangle skeleton screen |      ✅       |       ✅       |
+|  it should render circle skeleton screen   |      ✅       |       ✅       |
