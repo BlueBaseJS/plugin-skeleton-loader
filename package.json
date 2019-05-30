@@ -116,6 +116,7 @@
     "@storybook/addon-links": "^5.0.11",
     "@storybook/addon-viewport": "^5.0.11",
     "@storybook/react": "^5.0.11",
+    "emotion-theming": "^10.0.10",
     "@storybook/react-native": "^4.1.18",
     "@types/compression": "^0.0.36",
     "@types/deepmerge": "^2.2.0",
