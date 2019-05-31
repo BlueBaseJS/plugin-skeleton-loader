@@ -11,4 +11,4 @@ export interface SkeletonProps {
     cy?: number;
     r?: number;
 }
-export declare const Skeletons: (props: SkeletonProps) => JSX.Element;
+export declare const SkeletonLoader: (props: SkeletonProps) => JSX.Element;

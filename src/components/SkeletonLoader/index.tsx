@@ -13,7 +13,7 @@ export interface SkeletonProps {
 	r?: number;
 }
 
-export const Skeletons = (props: SkeletonProps) => {
+export const SkeletonLoader = (props: SkeletonProps) => {
 	const { type, x, y, rx, ry, width, height, cx, cy, r } = props;
 
 	return (
