@@ -1,6 +1,7 @@
 import ContentLoader from 'react-content-loader';
 import React from 'react';
-export interface SkeletonProps {
+
+export interface SkeletonLoaderProps {
 	type?: 'Circle' | 'Rect';
 	x?: number;
 	y?: number;
@@ -13,7 +14,7 @@ export interface SkeletonProps {
 	r?: number;
 }
 
-export const Skeletons = (props: SkeletonProps) => {
+export const SkeletonLoader = (props: SkeletonLoaderProps) => {
 	const { type, x, y, rx, ry, width, height, cx, cy, r } = props;
 
 	return (
