@@ -1,7 +1,7 @@
 const configs = require('@bluebase/code-standards/jest.config');
 
 module.exports = Object.assign(configs, {
-	// setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
+	setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
 	testRegex: undefined,
   "preset": "jest-expo",
   "transformIgnorePatterns": [
@@ -11,5 +11,6 @@ module.exports = Object.assign(configs, {
   verbose: true,
   testURL: 'http://localhost/',
 
-	// transformIgnorePatterns: ['<rootDir>/node_modules/(!ol)'],
+	// transformIgnorePatterns: ['ts-jest'],
 });
+

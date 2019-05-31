@@ -1,5 +1,5 @@
 /// <reference types="react" />
-export interface SkeletonProps {
+export interface SkeletonLoaderProps {
     type?: 'Circle' | 'Rect';
     x?: number;
     y?: number;
@@ -11,4 +11,4 @@ export interface SkeletonProps {
     cy?: number;
     r?: number;
 }
-export declare const Skeletons: (props: SkeletonProps) => JSX.Element;
+export declare const SkeletonLoader: (props: SkeletonLoaderProps) => JSX.Element;

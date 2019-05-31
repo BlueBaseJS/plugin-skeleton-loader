@@ -4,6 +4,11 @@ import Adapter from 'enzyme-adapter-react-16';
 import Enzyme from 'enzyme';
 
 /**
+ * Set up Enzyme to mount to DOM, simulate events,
+ * and inspect the DOM in tests.
+ */
+Enzyme.configure({ adapter: new Adapter() });
+/**
  * Set up DOM in node.js environment for Enzyme to mount to
  */
 const { JSDOM } = require('jsdom');
@@ -31,11 +36,6 @@ global.navigator = {
 };
 copyProps(window, global);
 
-/**
- * Set up Enzyme to mount to DOM, simulate events,
- * and inspect the DOM in tests.
- */
-Enzyme.configure({ adapter: new Adapter() });
 
 /**
  * Ignore some expected warnings

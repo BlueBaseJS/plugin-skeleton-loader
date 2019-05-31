@@ -1,8 +1,8 @@
 import { BootOptions } from '@bluebase/core';
 import commonBootOptions from '../common/bluebase';
 import deepmerge from 'deepmerge';
-// import Plugin from '../../src';
-// import {Router} from '@bluebase/plugin-react-router';
+import Plugin from '../../src';
+// import router  from '@bluebase/plugin-react-router';
 // TODO: Only for evaluation, remove this
 import DummyPlugin from './sample';
 import plugin from  "../../src/index"
@@ -16,10 +16,16 @@ const bootOptions: Partial<BootOptions> = {
 
 	plugins: [
 		// TODO: Only for evaluation, remove this
+<<<<<<< HEAD
 		plugin,
 		DummyPlugin
 		// Plugin,
 		// Router
+=======
+		DummyPlugin,
+		Plugin,
+		// router
+>>>>>>> 3ca3983b7c3d2f9d3884f1af7f7835fe38ad73cc
 	],
 	// config: {
 

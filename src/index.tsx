@@ -1,10 +1,13 @@
-import { Skeletons } from './components/Skeleton';
+import { SkeletonLoader } from './components/SkeletonLoader';
 import { createPlugin } from '@bluebase/core';
+
+export * from './components/exports';
+
 export default createPlugin({
-	key: 'ReactSkeletonPlugin',
-	name: 'react-skeleton',
+	key: 'skeleton-loader',
+	name: 'Skeleton Loader Plugin',
 
 	components: {
-		Skeleton: Skeletons,
+		SkeletonLoader,
 	},
 });
