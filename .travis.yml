@@ -1,6 +1,6 @@
 language: node_js
 cache:
-  yarn: true
+  yarn: false
   directories:
     - node_modules
 # notifications:
@@ -8,6 +8,8 @@ cache:
 node_js:
   - lts/*
 script:
+  -  rm -rf node_modules/ .jest/ yarn.lcok
+  -  yarn 
   -  yarn run test
   -  yarn run report-coverage
   -  yarn run build
