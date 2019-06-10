@@ -5,7 +5,7 @@
   <p>A BlueBase that provides a SkeletonLoader component.</p>
 </div>
 
-## Description:
+## Description
 
 Skeleton Loader is a component which is used to display a splash screen to indicate that the screen is loading.
 
