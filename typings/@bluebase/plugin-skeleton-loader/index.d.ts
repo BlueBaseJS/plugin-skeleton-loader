@@ -1,0 +1,1 @@
+declare module '@bluebase/plugin-skeleton-loader';
