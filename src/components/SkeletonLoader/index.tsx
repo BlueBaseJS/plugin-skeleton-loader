@@ -20,11 +20,11 @@ export const SkeletonLoader = (props: SkeletonProps) => {
 	return (
 		<View style={{ height, width }}>
 			{type === 'Circle' ? (
-				<ContentLoader>
+				<ContentLoader style={{ height, width }}>
 					<circle cx={`${cx}`} cy={`${cy}`} r={`${r}`} />
 				</ContentLoader>
 			) : (
-				<ContentLoader>
+				<ContentLoader style={{ height, width }}>
 					<rect
 						x={`${x}`}
 						y={`${y}`}
