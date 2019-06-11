@@ -3,14 +3,14 @@ import { View } from 'react-native';
 import { getComponent } from '@bluebase/core';
 import { storiesOf } from '@storybook/react';
 
-const Skeleton = getComponent('Skeleton');
+const SkeletonLoader = getComponent('SkeletonLoader');
 
 storiesOf('skeleton', module)
 
 	.add('rectangle skeleton ', () => {
 		return (
 			<View style={{ marginTop: 50, marginLeft: 50 }} >
-				<Skeleton
+				<SkeletonLoader
 					rx={7}
 					ry={7}
 					type="Rect"
@@ -23,7 +23,7 @@ storiesOf('skeleton', module)
 	)
 	.add('circle skeleton ', () => {
 		return (
-			<Skeleton
+			<SkeletonLoader
 				cx={30}
 				cy={30}
 				r={30}

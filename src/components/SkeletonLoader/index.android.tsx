@@ -14,12 +14,16 @@ export interface SkeletonProps {
 	cy?: number;
 	r?: number;
 }
-export const Skeletons = (props: SkeletonProps) => {
+export const SkeletonLoader = (props: SkeletonProps) => {
 	const { type, x, y, rx, ry, width, height, cx, cy, r } = props;
 	return (
 		<SvgAnimatedLinearGradient height={height ? height + 10 : ''}>
 			{type === 'Circle' ? (
-				<Svg.Circle cx={`${cx}`} cy={`${cy}`} r={`${r}`} />
+				<Svg.Circle
+					cx={`${cx}`}
+					cy={`${cy}`}
+					r={`${r}`}
+				/>
 			) : (
 					<Svg.Rect
 						x={`${x ? x : ''}`}

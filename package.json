@@ -1,16 +1,28 @@
 {
-  "config": {
-    "react-native-storybook-loader": {
-      "searchDir": [
-        "src",
-        "bluebase/storybook-native"
-      ],
-      "pattern": "**/*.stories.tsx",
-      "outputFile": "bluebase/storybook-native/storybook/storyLoader.js"
-    }
+  "name": "skeleton-loader",
+  "description": "A BlueBase plugin boilerplate! ",
+  "author": "BlueEast Team <code@blueeast.com>",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "repository": "https://github.com/BlueBaseJS/plugin-untitled",
+  "license": "MIT",
+  "keywords": [],
+  "config": {},
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
   },
+  "size-limit": [
+    {
+      "limit": "3 KB",
+      "webpack": false,
+      "path": "dist/**/*.js"
+    }
+  ],
   "scripts": {
-    "storybook-native:start": "bluebase storybook-native:start",
     "start": "yarn run storybook",
     "clean": "rimraf coverage dist tmp",
     "watch": "tsc -w -p tsconfig.json",
@@ -47,28 +59,6 @@
     "web:start": "bluebase web:start",
     "expo:start": "bluebase expo:start"
   },
-  "name": "skeleton-loader",
-  "description": "A BlueBase plugin boilerplate!",
-  "author": "BlueEast Team <code@blueeast.com>",
-  "version": "0.0.1",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "module": "dist/index.js",
-  "repository": "https://github.com/BlueBaseJS/plugin-skeleton-loader",
-  "license": "MIT",
-  "keywords": [],
-  "remarkConfig": {
-    "plugins": [
-      "remark-preset-lint-recommended"
-    ]
-  },
-  "size-limit": [
-    {
-      "limit": "3 KB",
-      "webpack": false,
-      "path": "dist/**/*.js"
-    }
-  ],
   "scripts-info": {
     "info": "Display information about the package scripts",
     "build": "Clean and rebuild the project",
@@ -86,27 +76,19 @@
     "node": ">=8.9"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.3",
-    "@types/expo": "^32.0.11",
-    "compression": "^1.7.4",
     "deepmerge": "^3.2.0",
-    "expo": "^32.0.6",
-    "metro-react-native-babel-preset": "^0.53.1",
+    "expo": "^32.0.0",
     "react-content-loader": "^4.2.1",
-    "react-native": "^0.57.8",
+    "react-native": "0.57.7",
     "react-native-svg-animated-linear-gradient": "^0.1.9",
-    "source-map-support": "^0.5.12",
-    "tslib": "^1.9.3",
-    "uuid": "^3.3.2"
+    "tslib": "^1.9.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.4.3",
-    "@bluebase/cli": "^0.0.15",
+    "@babel/core": "^7.3.4",
     "@bluebase/cli-essentials": "^0.0.4",
     "@bluebase/code-standards": "^1.0.2",
-    "@bluebase/core": "^4.0.0-aplha.17",
-    "@bluebase/plugin-react-router": "^0.0.1-aplha.9",
+    "@bluebase/core": "^4.0.0-aplha.27",
     "@bluebase/storybook-addon": "^3.0.0",
     "@blueeast/tslint-config-blueeast": "^0.7.0",
     "@storybook/addon-a11y": "^5.0.11",
@@ -122,6 +104,7 @@
     "@types/enzyme": "^3.9.0",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/enzyme-async-helpers": "^0.9.1",
+    "@types/expo": "^32.0.13",
     "@types/jest": "^24.0.9",
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
@@ -153,7 +136,7 @@
     "opn-cli": "^4.0.0",
     "prettier": "^1.16.4",
     "react": "^16",
-    "react-dom": "^16.4.2",
+    "react-dom": "^16.8.4",
     "react-native-storybook-loader": "^1.8.0",
     "react-native-typescript-transformer": "^1.2.12",
     "react-test-renderer": "^16.8.4",
