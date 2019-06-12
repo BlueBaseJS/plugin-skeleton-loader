@@ -17,19 +17,19 @@ export interface SkeletonProps {
 export const SkeletonLoader = (props: SkeletonProps) => {
 	const { type, x, y, rx, ry, width, height, cx, cy, r } = props;
 	return (
-		<SvgAnimatedLinearGradient height={height ? height + 10 : ''}>
+		<SvgAnimatedLinearGradient height={height} width={width}>
 			{type === 'Circle' ? (
 				<Svg.Circle cx={`${cx}`} cy={`${cy}`} r={`${r}`} />
 			) : (
-					<Svg.Rect
-						x={`${x ? x : ''}`}
-						y={`${y ? y : ''}`}
-						rx={`${x ? rx : ''}`}
-						ry={`${ry ? ry : ''}`}
-						width={`${width ? width : ''}`}
-						height={`${height ? height : ''}`}
-					/>
-				)}
+				<Svg.Rect
+					x={`${x}`}
+					y={`${y}`}
+					rx={`${rx}`}
+					ry={`${ry}`}
+					width={`${width}`}
+					height={`${height}`}
+				/>
+			)}
 		</SvgAnimatedLinearGradient>
 	);
 };
