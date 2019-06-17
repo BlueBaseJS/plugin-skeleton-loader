@@ -43,7 +43,7 @@ describe('test cases for web', () => {
 
 describe('test cases for android', () => {
 	it('should skeleton in circle', async () => {
-		const { SkeletonLoader } = require('../index.android.tsx');
+		const { SkeletonLoader } = require('../index.native.tsx');
 		const wrapper = mount(
 			<BlueBaseApp plugins={[Plugin]}>
 				<SkeletonLoader type="Circle" />
@@ -53,7 +53,7 @@ describe('test cases for android', () => {
 		expect(wrapper.props().children.props.type).toBe('Circle');
 	});
 	it('should skeleton in rectangle', async () => {
-		const { SkeletonLoader } = require('../index.android.tsx');
+		const { SkeletonLoader } = require('../index.native.tsx');
 		const wrapper = mount(
 			<BlueBaseApp plugins={[Plugin]}>
 				<SkeletonLoader type="Rect" x={8} y={8} rx={8} ry={8} width={24} height={24} />
@@ -63,7 +63,7 @@ describe('test cases for android', () => {
 		expect(wrapper.props().children.props.type).toBe('Rect');
 	});
 	it('should skeleton in rectangle', async () => {
-		const { SkeletonLoader } = require('../index.android.tsx');
+		const { SkeletonLoader } = require('../index.native.tsx');
 		const wrapper = mount(
 			<BlueBaseApp plugins={[Plugin]}>
 				<SkeletonLoader type="Rect" />
@@ -76,7 +76,7 @@ describe('test cases for android', () => {
 
 describe('test cases for Ios', () => {
 	it('should skeleton in circle', async () => {
-		const { SkeletonLoader } = require('../index.ios.tsx');
+		const { SkeletonLoader } = require('../index.native.tsx');
 		const wrapper = mount(
 			<BlueBaseApp plugins={[Plugin]}>
 				<SkeletonLoader type="Circle" />
@@ -86,7 +86,7 @@ describe('test cases for Ios', () => {
 		expect(wrapper.props().children.props.type).toBe('Circle');
 	});
 	it('should skeleton in rectangle', async () => {
-		const { SkeletonLoader } = require('../index.ios.tsx');
+		const { SkeletonLoader } = require('../index.native.tsx');
 		const wrapper = mount(
 			<BlueBaseApp plugins={[Plugin]}>
 				<SkeletonLoader type="Rect" x={8} y={8} rx={8} ry={8} width={24} height={24} />
@@ -96,7 +96,7 @@ describe('test cases for Ios', () => {
 		expect(wrapper.props().children.props.type).toBe('Rect');
 	});
 	it('should skeleton in rectangle', async () => {
-		const { SkeletonLoader } = require('../index.ios.tsx');
+		const { SkeletonLoader } = require('../index.native.tsx');
 		const wrapper = mount(
 			<BlueBaseApp plugins={[Plugin]}>
 				<SkeletonLoader type="Rect" />
