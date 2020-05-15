@@ -2582,12 +2582,11 @@
     "@types/react" "*"
     "@types/webpack" "*"
 
-"@types/react-native@*", "@types/react-native@^0.57.7":
-  version "0.57.60"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.60.tgz#61e97a84e2f64ed971e7d238bb30cec188898235"
-  integrity sha512-zObrnRsCbpM7qDm97d8+5qiSIMMYRaWgpqu6orjbjzLUAcJaKnpBMXgW6bRXWkFBjHgm3hjDAdVVGMWlrYJBdw==
+"@types/react-native@*", "@types/react-native@^0.62.9":
+  version "0.62.9"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.62.9.tgz#f75d4a8879e68ed3857d6f2f73dc0752a0505362"
+  integrity sha512-OcoE7SKz1PsvTGJK5fIwJu6kWdDFN+hH1vMI4GVTEBYhV5FAM5vKVUFCaSiEPJScyNyIEWAeQwFvI3a01+Grzg==
   dependencies:
-    "@types/prop-types" "*"
     "@types/react" "*"
 
 "@types/react-test-renderer@^16.8.1":
